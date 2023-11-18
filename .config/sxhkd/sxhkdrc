@@ -2,6 +2,10 @@
 # wm independent hotkeys
 #
 
+# quit/restart bspwm
+super + q 
+	powermenu
+
 # terminal emulator
 super + Return
 	alacritty
@@ -22,14 +26,10 @@ super + e
 super + shift + e
 	rofi -modi emoji -show emoji
 
-# firefox
-super + b
-	firefox
-
 # screenshot
 # super + s
 @Print
-	scrot -s --line mode=edge ~/screenshots/%d-%m-%Y_%H%M%S.png -e 'xclip -selection clipboard -target image/png -i $f && dunstify -i "$f" "Screenshot" -r 1337 -u normal "Captura de tela realizada com sucesso!"'
+	scrot -s --line mode=edge ~/screenshots/%d-%m-%Y_%H%M%S.png -e 'xclip -selection clipboard -target image/png -i $f && dunstify -i "$f" "Screenshot" -r 1337 -u normal "screenshot taken."'
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -38,10 +38,6 @@ super + Escape
 #
 # bspwm hotkeys
 #
-
-# quit/restart bspwm
-super + alt + q
-	powermenu
 
 # close and kill
 super + {_,shift + }w
