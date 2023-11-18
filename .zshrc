@@ -16,11 +16,11 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 alias ls="exa --icons"
 alias cat="bat --style=auto"
 alias c="clear"
-alias v="neovim"
+alias v="nvim"
 alias neofetch="neofetch --ascii_distro ArchMerge"
 
 
-# Dotfiles 
+# Aliases for dotfiles git bare repo
 
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
