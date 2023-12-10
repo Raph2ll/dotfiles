@@ -31,7 +31,7 @@ window#waybar {
 #workspaces button {
     outline: none;
     padding: 0 10px;
-    color: @theme_text_color;
+    color: #e5e9f0;
     border-bottom: none;
 }
 #workspaces button:last-child {
