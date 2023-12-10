@@ -1,0 +1,92 @@
+/*
+ * __        __          _                  ____  _         _       
+ * \ \      / /_ _ _   _| |__   __ _ _ __  / ___|| |_ _   _| | ___  
+ *  \ \ /\ / / _` | | | | '_ \ / _` | '__| \___ \| __| | | | |/ _ \ 
+ *   \ V  V / (_| | |_| | |_) | (_| | |     ___) | |_| |_| | |  __/ 
+ *    \_/\_/ \__,_|\__, |_.__/ \__,_|_|    |____/ \__|\__, |_|\___| 
+ *                 |___/                              |___/         
+ *  
+*/
+
+* {
+    border: none;
+    border-radius: 0;
+    /* font-family: "DejaVu Sans Mono"; */
+    font-family: "JetBrains Mono", "Font Awesome 6 Free,Font Awesome 10 Free Solid";
+    font-size: 14px;
+    min-height: 0;
+}
+window#waybar {
+    background: alpha(#2e3440, 0.1);
+    color: alpha(#e5e9f0, 1.0);
+}
+
+#workspaces {
+    outline: none;
+    background: alpha(#3b4252, 0.9);
+    margin: 6px;
+    border-radius: 4px;
+}
+
+#workspaces button {
+    outline: none;
+    padding: 0 10px;
+    color: @theme_text_color;
+    border-bottom: none;
+}
+#workspaces button:last-child {
+    border-radius: 0 4px 4px 0;
+}
+#workspaces button:first-child {
+    border-radius: 4px 0 0 4px;
+}
+#workspaces button:only-child {
+    border-radius: 4px;
+}
+#workspaces button.active {
+    background: alpha(#4c566a, 1);
+}
+
+tooltip {
+    background: alpha(@theme_base_color, 0.9);
+}
+tooltip label {
+    color: @theme_text_color
+}
+
+#idle_inhibitor,
+#clock,
+#cpu,
+#memory,
+#pulseaudio,
+#tray,
+#temperature,
+#keyboard-state,
+#custom-microphone,
+#custom-ping,
+#custom-power,
+#gamemode,
+#custom-pkgs,
+
+#mpris {
+    margin: 6px 6px 6px 0;
+    background: alpha(#4c566a, 0.8);
+    padding: 0 10px;
+    border-radius: 4px;
+}
+
+#custom-power {
+    margin: 6px;
+    background: alpha(#bf616a, 0.6);
+}
+
+#tray menu *{
+    font-size: 14px;
+}
+
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: black;
+    }
+}

@@ -1,0 +1,137 @@
+{
+    // Settings
+    "layer": "top",
+    "position": "top",
+    "margin": 10,
+    "height": 36,
+    "spacing": 4,
+    "width": 1900,
+
+    // Module Order
+    "modules-left": ["hyprland/workspaces","mpris","hyprland/window"],
+    "modules-right": ["custom/ping", "pulseaudio","cpu","memory", "clock", "tray", "custom/power"],
+
+    // Left Modules
+    "custom/power": {
+        "format": "󰫢",
+        "on-click": "$HOME/.local/bin/power.sh"
+    },
+
+    "hyprland/workspaces": {
+        "format": "{name}",
+        "on-click": "activate",
+        "sort-by-number": true
+    },
+
+    "mpris": {
+        "format": "{status_icon} {title}",
+        "format-paused": "{status_icon} {title}",
+        "interval": 1,
+            "status-icons": {
+                "playing": "",
+                "paused": ""
+            },
+            "max-length": 30
+    },
+
+   "hyprland/window": {
+        "rewrite": {
+            "(.*) — Mozilla Firefox": "$1",
+            "(.*) - Brave": "$1",
+            "(.*) - Chromium": "$1",
+            "(.*) - Brave Search": "$1",
+            "(.*) - Outlook": "$1",
+            "(.*) - Microsoft Teams": "$1"
+        },
+    "separate-outputs": true,
+    "max-length": 20
+   },
+
+    // Right Modules
+    "gamemode": {
+        "format": "{glyph} {count}",
+        "glyph": "",
+        "hide-not-running": true,
+        "use-icon": true,
+        "icon-name": "input-gaming-symbolic",
+        "icon-spacing": 4,
+        "icon-size": 20,
+        "tooltip": true,
+        "tooltip-format": "Games running: {count}"
+    },
+
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
+    },
+
+    "custom/pkgs": {
+        // "exec": "[[ -e /tmp/execpkgs ]] && $HOME/.local/bin/pkg.sh || echo '-/-'",
+        "exec": "$HOME/.local/bin/pkg.sh || echo '-/-'",
+        "format": " {}",
+        "on-click": "touch /tmp/execpkgs",
+        "on-click-right": "alacritty -e yay -Syu",
+        "interval": "once",
+    },
+
+    "custom/ping": {
+        "exec": "printf '%03d' $(ping -c 1 1.1.1.1 -w 1 2>/dev/null | tail -1 | awk '{print $4}' | cut -d '/' -f 2 | cut -d '.' -f 1)",
+        "interval": 2,
+        "format": " {}ms"
+    },
+
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-muted": " {volume}%",
+        "format-bluetooth": "{icon} {volume}%",
+        "max-volume": 150,
+        "format-bluetooth-muted": " {icon}",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pamixer -t",
+        "on-click-right": "pavucontrol"
+    },
+
+
+    "cpu": {
+        "format": " {usage:02}%",
+        "interval": 2
+    },
+
+    "memory": {
+        "format": " {used:02} GB",
+        "interval": 2,
+        "tooltip-format": "{percentage}% Used\nTotal: {total} GB"
+    },
+
+    "temperature": {
+        "thermal-zone": 2,
+        "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+        "critical-threshold": 80,
+        "format-critical": " {temperatureC}°C",
+        "format": " {temperatureC}°C",
+    },
+
+    "clock": {
+        "timezone": "Brazil/Fortaleza",
+        "tooltip-format": "<tt>{calendar}</tt>",
+        "format": " {:%I:%M %p}",
+        "format-alt": "{:%d %h %Y ∙ %A}"
+    },
+
+    "tray": {
+        // "icon-size": 21,
+        "spacing": 10
+    },
+
+}
