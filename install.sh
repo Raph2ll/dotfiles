@@ -147,7 +147,8 @@ fi
 
 # Install packages 
 # PLEASE NOTE: Add more packages at the end of the following command
-sudo pacman -S hyprland waybar rofi wofi kitty alacritty dunst dolphin xdg-desktop-portal-hyprland qt5-wayland qt6-wayland hyprpaper chromium ttf-font-awesome
+# wofi kitty zathura
+sudo pacman -S hyprland waybar rofi alacritty dunst dolphin xdg-desktop-portal-hyprland qt5-wayland qt6-wayland hyprpaper chromium ttf-font-awesome zsh visual-studio-code-bin neovim hyprshot pamixer pavucontrol
 
 # Install yay packages
 # PLEASE NOTE: Add more packages at the end of the following command
